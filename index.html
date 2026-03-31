@@ -14,24 +14,24 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: system-ui, -apple-system, sans-serif;
             background-color: #ffffff;
             color: #333;
             line-height: 1.6;
         }
 
         .header {
-            background: linear-gradient(135deg, #185FA5 0%, #1a6bb8 100%);
+            background: linear-gradient(135deg, #185FA5 0%, #1a5390 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .header h1 {
             font-size: 2.2rem;
+            margin-bottom: 8px;
             font-weight: 700;
-            margin-bottom: 0.5rem;
         }
 
         .header p {
@@ -39,455 +39,416 @@
             opacity: 0.9;
         }
 
-        .dashboard-container {
+        .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 20px;
         }
 
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .kpi-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 4px solid;
-            transition: transform 0.2s ease;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .kpi-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
 
-        .kpi-card.primary { border-color: #185FA5; }
-        .kpi-card.danger { border-color: #E24B4A; }
-        .kpi-card.warning { border-color: #BA7517; }
-        .kpi-card.success { border-color: #3B6D11; }
-
-        .kpi-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
+        .kpi-card.os-abertas { border-left-color: #185FA5; }
+        .kpi-card.backlog { border-left-color: #E24B4A; }
+        .kpi-card.tmm { border-left-color: #BA7517; }
+        .kpi-card.impacto { border-left-color: #3B6D11; }
 
         .kpi-title {
             font-size: 0.9rem;
             color: #666;
-            font-weight: 500;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .kpi-icon {
-            width: 24px;
-            height: 24px;
-            opacity: 0.7;
+            font-weight: 600;
         }
 
         .kpi-value {
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
         }
 
-        .kpi-card.primary .kpi-value { color: #185FA5; }
-        .kpi-card.danger .kpi-value { color: #E24B4A; }
-        .kpi-card.warning .kpi-value { color: #BA7517; }
-        .kpi-card.success .kpi-value { color: #3B6D11; }
+        .kpi-card.os-abertas .kpi-value { color: #185FA5; }
+        .kpi-card.backlog .kpi-value { color: #E24B4A; }
+        .kpi-card.tmm .kpi-value { color: #BA7517; }
+        .kpi-card.impacto .kpi-value { color: #3B6D11; }
 
-        .kpi-subtitle {
+        .kpi-change {
             font-size: 0.85rem;
-            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
+
+        .change-positive { color: #3B6D11; }
+        .change-negative { color: #E24B4A; }
 
         .charts-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
         .chart-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .chart-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
             color: #185FA5;
         }
 
         .chart-container {
             position: relative;
             height: 350px;
+            width: 100%;
         }
 
-        .services-chart {
-            grid-column: 1 / -1;
-        }
-
-        .content-grid {
+        .bottom-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        .table-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        .horizontal-chart {
+            height: 300px;
         }
 
-        .table-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #185FA5;
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
         }
 
         .backlog-table {
             width: 100%;
             border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        .backlog-table th {
-            background: #f8f9fa;
-            padding: 0.75rem;
+        .backlog-table thead {
+            background: #185FA5;
+            color: white;
+        }
+
+        .backlog-table th, .backlog-table td {
+            padding: 12px 15px;
             text-align: left;
-            font-weight: 600;
-            color: #555;
-            font-size: 0.9rem;
-            border-bottom: 2px solid #e9ecef;
+            border-bottom: 1px solid #eee;
         }
 
-        .backlog-table td {
-            padding: 0.75rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .backlog-table tr:hover {
+        .backlog-table tbody tr:hover {
             background-color: #f8f9fa;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
+        .urgency-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .badge.critical { background: #E24B4A; color: white; }
-        .badge.high { background: #BA7517; color: white; }
-        .badge.medium { background: #185FA5; color: white; }
+        .badge-critica { background-color: #E24B4A; color: white; }
+        .badge-alta { background-color: #BA7517; color: white; }
+        .badge-media { background-color: #185FA5; color: white; }
 
-        .insights-card {
-            background: white;
+        .insights-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid #185FA5;
         }
 
         .insights-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #185FA5;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
         }
 
-        .ai-icon {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(45deg, #185FA5, #3B6D11);
-            border-radius: 50%;
+        .insights-list {
+            list-style: none;
+            display: grid;
+            gap: 15px;
         }
 
         .insight-item {
-            background: #f8f9fa;
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border-left: 4px solid #185FA5;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
+            position: relative;
         }
 
-        .insight-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .insight-text {
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .insight-priority {
-            color: #E24B4A;
-            font-weight: 600;
-        }
-
-        .insight-improvement {
-            color: #3B6D11;
-            font-weight: 600;
+        .insight-icon {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font-size: 1.2rem;
         }
 
         .footer {
             background: #185FA5;
             color: white;
             text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1024px) {
-            .charts-grid, .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .kpi-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            }
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
-            .dashboard-container {
-                padding: 1rem;
+            .charts-grid {
+                grid-template-columns: 1fr;
             }
             
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+
             .header h1 {
                 font-size: 1.8rem;
             }
-            
+
             .kpi-value {
                 font-size: 2rem;
             }
-            
-            .chart-container {
-                height: 300px;
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Dashboard de Manutenção Rodoviária</h1>
+    <div class="header">
+        <h1>Dashboard Manutenção Rodoviária</h1>
         <p>Fratello Engenharia - Monitoramento em Tempo Real</p>
-    </header>
+    </div>
 
-    <main class="dashboard-container">
-        <!-- KPIs Section -->
-        <section class="kpi-grid">
-            <div class="kpi-card primary">
-                <div class="kpi-header">
-                    <span class="kpi-title">Ordens de Serviço Abertas</span>
-                    <svg class="kpi-icon" fill="#185FA5" viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.58L21 8l-9 9z"/>
-                    </svg>
+    <div class="container">
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-card os-abertas">
+                <div class="kpi-title">OS Abertas</div>
+                <div class="kpi-value">248</div>
+                <div class="kpi-change change-negative">
+                    ↗ +12% vs semana anterior
                 </div>
-                <div class="kpi-value">247</div>
-                <div class="kpi-subtitle">+12 desde última semana</div>
             </div>
-
-            <div class="kpi-card danger">
-                <div class="kpi-header">
-                    <span class="kpi-title">Backlog (>7 dias)</span>
-                    <svg class="kpi-icon" fill="#E24B4A" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.58L21 8l-9 9z"/>
-                    </svg>
+            
+            <div class="kpi-card backlog">
+                <div class="kpi-title">Backlog (&gt;7 dias)</div>
+                <div class="kpi-value">63</div>
+                <div class="kpi-change change-negative">
+                    ↗ +8% vs semana anterior
                 </div>
-                <div class="kpi-value">58</div>
-                <div class="kpi-subtitle">23.5% do total de OS abertas</div>
             </div>
-
-            <div class="kpi-card warning">
-                <div class="kpi-header">
-                    <span class="kpi-title">TMM (Tempo Médio)</span>
-                    <svg class="kpi-icon" fill="#BA7517" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                    </svg>
+            
+            <div class="kpi-card tmm">
+                <div class="kpi-title">TMM (dias)</div>
+                <div class="kpi-value">4.7</div>
+                <div class="kpi-change change-positive">
+                    ↘ -15% vs semana anterior
                 </div>
-                <div class="kpi-value">12.4</div>
-                <div class="kpi-subtitle">dias para resolução</div>
             </div>
-
-            <div class="kpi-card success">
-                <div class="kpi-header">
-                    <span class="kpi-title">% Impacto Alto</span>
-                    <svg class="kpi-icon" fill="#3B6D11" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
+            
+            <div class="kpi-card impacto">
+                <div class="kpi-title">% Impacto Alto</div>
+                <div class="kpi-value">18%</div>
+                <div class="kpi-change change-negative">
+                    ↗ +3% vs semana anterior
                 </div>
-                <div class="kpi-value">34%</div>
-                <div class="kpi-subtitle">84 OS de impacto alto</div>
             </div>
-        </section>
+        </div>
 
-        <!-- Charts Section -->
-        <section class="charts-grid">
+        <!-- Charts Grid -->
+        <div class="charts-grid">
             <div class="chart-card">
-                <h3 class="chart-title">OS Abertas vs Encerradas (Últimas 8 Semanas)</h3>
+                <div class="chart-title">OS Abertas vs Encerradas (Últimas 8 Semanas)</div>
                 <div class="chart-container">
-                    <canvas id="weeklyChart"></canvas>
+                    <canvas id="osChart"></canvas>
                 </div>
             </div>
-
+            
             <div class="chart-card">
-                <h3 class="chart-title">Distribuição por Status</h3>
+                <div class="chart-title">Distribuição por Status</div>
                 <div class="chart-container">
                     <canvas id="statusChart"></canvas>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="chart-card services-chart">
-            <h3 class="chart-title">Ordens de Serviço por Tipo de Manutenção</h3>
-            <div class="chart-container">
-                <canvas id="servicesChart"></canvas>
-            </div>
-        </section>
-
-        <!-- Content Grid -->
-        <section class="content-grid">
-            <div class="table-card">
-                <h3 class="table-title">Top 5 Backlog Crítico</h3>
-                <table class="backlog-table">
-                    <thead>
-                        <tr>
-                            <th>OS</th>
-                            <th>Descrição</th>
-                            <th>Dias</th>
-                            <th>Urgência</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>OS-2024-0892</strong></td>
-                            <td>Reparo emergencial ponte Rio Verde</td>
-                            <td>23</td>
-                            <td><span class="badge critical">Crítica</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>OS-2024-0856</strong></td>
-                            <td>Tapa-buraco BR-101 km 345-348</td>
-                            <td>19</td>
-                            <td><span class="badge critical">Crítica</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>OS-2024-0834</strong></td>
-                            <td>Manutenção sinalização horizontal</td>
-                            <td>16</td>
-                            <td><span class="badge high">Alta</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>OS-2024-0798</strong></td>
-                            <td>Limpeza sistema de drenagem</td>
-                            <td>14</td>
-                            <td><span class="badge high">Alta</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>OS-2024-0777</strong></td>
-                            <td>Poda vegetação marginal</td>
-                            <td>12</td>
-                            <td><span class="badge medium">Média</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="insights-card">
-                <h3 class="insights-title">
-                    <div class="ai-icon"></div>
-                    Insights de IA
-                </h3>
-                
-                <div class="insight-item">
-                    <div class="insight-text">
-                        <span class="insight-priority">Atenção:</span> Aumento de 15% nas OS de pavimentação nas últimas 2 semanas, coincidindo com período chuvoso. Recomenda-se priorizar inspeções preventivas.
-                    </div>
-                </div>
-
-                <div class="insight-item">
-                    <div class="insight-text">
-                        <span class="insight-improvement">Oportunidade:</span> 78% das OS de sinalização são resolvidas em menos de 5 dias. Considere aplicar este processo para outras categorias.
-                    </div>
-                </div>
-
-                <div class="insight-item">
-                    <div class="insight-text">
-                        <span class="insight-priority">Alerta:</span> Backlog crítico concentrado em 3 trechos específicos. Sugere-se mobilização de equipe adicional para estes pontos.
-                    </div>
-                </div>
-
-                <div class="insight-item">
-                    <div class="insight-text">
-                        <span class="insight-improvement">Tendência:</span> TMM reduziu 8% no último mês. Manter foco nas práticas atuais de gestão de recursos e priorização.
-                    </div>
+        <!-- Bottom Grid -->
+        <div class="bottom-grid">
+            <div class="chart-card">
+                <div class="chart-title">OS por Tipo de Serviço</div>
+                <div class="chart-container horizontal-chart">
+                    <canvas id="serviceChart"></canvas>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Fratello Engenharia | Dashboard gerado em: 31/03/2026, 04:38:14 UTC-4</p>
-    </footer>
+            <div class="chart-card">
+                <div class="chart-title">Top 5 Backlog Crítico</div>
+                <div class="table-container">
+                    <table class="backlog-table">
+                        <thead>
+                            <tr>
+                                <th>OS</th>
+                                <th>Rodovia</th>
+                                <th>Dias</th>
+                                <th>Urgência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>OS-2026-0847</strong></td>
+                                <td>BR-040 KM 158</td>
+                                <td>23</td>
+                                <td><span class="urgency-badge badge-critica">Crítica</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OS-2026-0792</strong></td>
+                                <td>BR-116 KM 342</td>
+                                <td>19</td>
+                                <td><span class="urgency-badge badge-critica">Crítica</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OS-2026-0735</strong></td>
+                                <td>BR-381 KM 567</td>
+                                <td>16</td>
+                                <td><span class="urgency-badge badge-alta">Alta</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OS-2026-0823</strong></td>
+                                <td>BR-262 KM 89</td>
+                                <td>14</td>
+                                <td><span class="urgency-badge badge-alta">Alta</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OS-2026-0901</strong></td>
+                                <td>BR-040 KM 203</td>
+                                <td>12</td>
+                                <td><span class="urgency-badge badge-media">Média</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights Section -->
+        <div class="insights-section">
+            <div class="insights-title">
+                🤖 Insights da IA
+            </div>
+            <ul class="insights-list">
+                <li class="insight-item">
+                    <span class="insight-icon">⚠️</span>
+                    <strong>Alerta de Capacidade:</strong> O backlog aumentou 8% na última semana. Recomenda-se mobilização de equipes adicionais para serviços de pavimentação na BR-040.
+                </li>
+                <li class="insight-item">
+                    <span class="insight-icon">📊</span>
+                    <strong>Tendência Positiva:</strong> O TMM médio reduziu 15%, indicando melhoria na eficiência operacional. Destaque para otimização em serviços de sinalização.
+                </li>
+                <li class="insight-item">
+                    <span class="insight-icon">🎯</span>
+                    <strong>Priorização:</strong> 18% das OS são de alto impacto. Focar recursos em pavimentação e drenagem para reduzir riscos de segurança viária.
+                </li>
+                <li class="insight-item">
+                    <span class="insight-icon">📈</span>
+                    <strong>Projeção:</strong> Com a tendência atual, estima-se 280 OS abertas na próxima semana. Monitorar condições climáticas que podem acelerar demandas.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Fratello Engenharia</strong> | Dashboard gerado automaticamente em: <strong>31/03/2026, 04:48:46 UTC-4</strong></p>
+    </div>
 
     <script>
-        // Color palette
-        const colors = {
-            primary: '#185FA5',
-            danger: '#E24B4A',
-            warning: '#BA7517',
-            success: '#3B6D11',
-            light: '#f8f9fa',
-            gray: '#6c757d'
-        };
+        // Configurações globais do Chart.js
+        Chart.defaults.font.family = 'system-ui';
+        Chart.defaults.font.size = 12;
 
-        // Weekly OS Chart
-        const weeklyCtx = document.getElementById('weeklyChart').getContext('2d');
-        new Chart(weeklyCtx, {
+        // Gráfico de Barras - OS Abertas vs Encerradas
+        const osCtx = document.getElementById('osChart').getContext('2d');
+        new Chart(osCtx, {
             type: 'bar',
             data: {
-                labels: ['Sem 9', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13', 'Sem 14', 'Sem 15', 'Sem 16'],
+                labels: ['Sem 06', 'Sem 07', 'Sem 08', 'Sem 09', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13'],
                 datasets: [{
                     label: 'OS Abertas',
-                    data: [45, 52, 48, 61, 55, 58, 62, 67],
-                    backgroundColor: colors.primary,
-                    borderColor: colors.primary,
-                    borderWidth: 1,
-                    borderRadius: 4
+                    data: [198, 214, 187, 223, 201, 189, 235, 248],
+                    backgroundColor: '#185FA5',
+                    borderColor: '#185FA5',
+                    borderRadius: 4,
                 }, {
                     label: 'OS Encerradas',
-                    data: [38, 44, 51, 47, 49, 52, 45, 55],
-                    backgroundColor: colors.success,
-                    borderColor: colors.success,
-                    borderWidth: 1,
-                    borderRadius: 4
+                    data: [176, 189, 201, 195, 217, 203, 198, 185],
+                    backgroundColor: '#3B6D11',
+                    borderColor: '#3B6D11',
+                    borderRadius: 4,
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
                         grid: {
-                            color: '#e9ecef'
+                            color: '#f0f0f0'
                         }
                     },
                     x: {
@@ -495,35 +456,21 @@
                             display: false
                         }
                     }
-                },
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            usePointStyle: true,
-                            padding: 20
-                        }
-                    }
                 }
             }
         });
 
-        // Status Distribution Chart
+        // Gráfico Donut - Status
         const statusCtx = document.getElementById('statusChart').getContext('2d');
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Aguardando', 'Em Andamento', 'Pausada', 'Pendente Aprovação'],
+                labels: ['Em Andamento', 'Aguardando', 'Planejadas', 'Em Aprovação', 'Suspensas'],
                 datasets: [{
-                    data: [89, 124, 18, 16],
-                    backgroundColor: [
-                        colors.warning,
-                        colors.primary,
-                        colors.danger,
-                        colors.gray
-                    ],
-                    borderWidth: 2,
-                    borderColor: '#ffffff'
+                    data: [156, 42, 38, 28, 21],
+                    backgroundColor: ['#185FA5', '#BA7517', '#3B6D11', '#E24B4A', '#666666'],
+                    borderWidth: 0,
+                    cutout: '65%'
                 }]
             },
             options: {
@@ -534,62 +481,49 @@
                         position: 'bottom',
                         labels: {
                             usePointStyle: true,
-                            padding: 15
+                            padding: 15,
+                            font: {
+                                size: 11
+                            }
                         }
                     }
                 }
             }
         });
 
-        // Services Type Chart
-        const servicesCtx = document.getElementById('servicesChart').getContext('2d');
-        new Chart(servicesCtx, {
+        // Gráfico de Barras Horizontal - Tipos de Serviço
+        const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+        new Chart(serviceCtx, {
             type: 'bar',
             data: {
-                labels: [
-                    'Pavimentação',
-                    'Sinalização',
-                    'Drenagem',
-                    'Obras de Arte',
-                    'Paisagismo',
-                    'Limpeza',
-                    'Iluminação'
-                ],
+                labels: ['Pavimentação', 'Sinalização', 'Drenagem', 'Estruturas', 'Limpeza', 'Paisagismo'],
                 datasets: [{
-                    label: 'Quantidade de OS',
-                    data: [78, 45, 32, 28, 24, 22, 18],
-                    backgroundColor: [
-                        colors.primary,
-                        colors.success,
-                        colors.warning,
-                        colors.danger,
-                        colors.primary,
-                        colors.success,
-                        colors.warning
-                    ],
-                    borderRadius: 4
+                    label: 'Número de OS',
+                    data: [89, 67, 45, 31, 28, 19],
+                    backgroundColor: ['#185FA5', '#BA7517', '#E24B4A', '#3B6D11', '#666666', '#999999'],
+                    borderRadius: 6,
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
                 scales: {
                     x: {
                         beginAtZero: true,
                         grid: {
-                            color: '#e9ecef'
+                            color: '#f0f0f0'
                         }
                     },
                     y: {
                         grid: {
                             display: false
                         }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
                     }
                 }
             }
@@ -598,26 +532,3 @@
 </body>
 </html>
 ```
-
-Este dashboard HTML completo para a Fratello Engenharia apresenta:
-
-**Características principais:**
-- Design profissional e responsivo usando a paleta de cores especificada
-- KPIs destacados com ícones e valores em tempo real
-- 3 gráficos Chart.js com dados realistas de manutenção rodoviária
-- Tabela de backlog crítico com badges de urgência
-- Seção de insights de IA com recomendações práticas
-- Layout responsivo que se adapta a diferentes tamanhos de tela
-
-**Funcionalidades implementadas:**
-- ✅ Paleta de cores: azul #185FA5, vermelho #E24B4A, âmbar #BA7517, verde #3B6D11
-- ✅ KPIs: OS Abertas (247), Backlog >7 dias (58), TMM (12.4 dias), % Impacto Alto (34%)
-- ✅ Gráfico de barras: OS abertas vs encerradas por semana
-- ✅ Gráfico donut: distribuição por status
-- ✅ Gráfico barras horizontal: tipos de serviço de manutenção rodoviária
-- ✅ Tabela top-5 backlog crítico com badges de urgência
-- ✅ Seção insights de IA com análises relevantes
-- ✅ Rodapé com data de geração especificada
-- ✅ Design responsivo e autocontido (sem dependências externas exceto Chart.js CDN)
-
-O dashboard está pronto para uso e apresenta dados realistas do setor de manutenção rodoviária.
